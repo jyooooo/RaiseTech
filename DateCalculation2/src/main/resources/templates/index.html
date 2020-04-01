@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<meta charset="UTF-8">
+
+<title>DateCalculation</title>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="..static/index.css"
+	th:href="@{/index.css}">
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript"
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+	<div class="main">
+		<h3>計算の基準となる日付を入力してください。</h3>
+		<div class="form">
+			<form action="#" method="POST" th:action="@{/domain}"
+				th:object="${Domain}">
+				<div class="form-group">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="20200101">
+				</div>
+			</form>
+		</div>
+		<div class="button">
+			<button type="button" class="btn btn-default btn-sm active">計算実行</button>
+			<a href="/register">
+				<button type="button" class="btn btn btn-danger btn-sm active">新規登録</button>
+			</a>
+		</div>
+	</div>
+
+	<div class="table">
+		<table class="table table-hover">
+			<tr>
+				<th>No.</th>
+				<th>日付ID</th>
+				<th>日付名</th>
+				<th>計算結果</th>
+				<th>計算式(年月日)</th>
+				<th>編集</th>
+			</tr>
+			<!-- <tr th:each="Calulations:${Calulation}" th:object="${domain}" > -->
+			<!-- <tr th:each="calc:${Calulation}" > -->
+			<tr th:each="calc, stat : ${Calculation}" th:object="${calc}">
+
+				<th th:text="${stat.count}"></th>
+				<td th:text="*{id}"></td>
+				<td th:text="*{dateName}"></td>
+				<td>ここに計算結果を表示させる</td>
+				<td th:text="*{formula}"></td>
+
+				<td id="edit">
+				 <a th:href="@{/{id}/edit(id=*{id})}">更新</a>
+					<form th:action="@{/{id}(id=*{id})}" th:method="POST">
+						<input type="submit" value="削除">
+					</form></td>
+
+
+
+			</tr>
+
+		</table>
+	</div>
+
+</body>
+</html>

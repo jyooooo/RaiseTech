@@ -1,0 +1,13 @@
+#フィールド名
+id=日付ID
+NotBlank.id={0}を入力してください
+
+dateName=ユーザー名
+NotBlank.dateName={0}を入力してください
+
+formula=計算式
+NotBlank.formula={0}を入力してください
+
+
+
+

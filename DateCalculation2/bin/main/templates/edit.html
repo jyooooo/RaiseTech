@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<meta charset="UTF-8">
+
+
+
+<title>register</title>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="..static/register.css"
+	th:href="@{/register.css}">
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript"
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<div class="main">
+		<div class="text">
+
+			<form  th:method="POST" th:action="@{/{id}/update(id=*{id})}" th:object="${Calculations}">
+			 <label>日付ID</label>
+				<input type="text" name="id" th:value="*{id}" >
+				 <label >日付名</label>
+				<input type="text" name="dateName"  th:value="*{dateName}">
+				<label>formula</label>
+				<input type="text" name="formula" th:value="*{formula}">
+
+
+				<!-- エラー表示 -->
+				<table>
+   					 <tr th:if="${validationError}" th:each="error : ${validationError}">
+    				  <td style="color:red;" th:text="${error}"></td>
+   						 </tr>
+  				</table>
+				<!-- <p>加減値(年)</p> -->
+				<!-- <p>加減値(月)</p>
+				<input type="text" name="month" class="form-control" placeholder="1">
+				<p>加減値(日)</p>
+				<input type="text" name="date" class="form-control" placeholder="0"> -->
+				<input type="submit" value="更新" />
+				<!-- <button type="button" class="btn btn-default btn-sm active">登録</button> -->
+			</form>
+			<a href="/">
+				<button type="button" class="btn btn-default btn-sm active">戻る</button>
+			</a>
+		</div>
+	</div>
+</body>
+
+
+</html>

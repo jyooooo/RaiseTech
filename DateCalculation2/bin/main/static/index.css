@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+.main{
+	background-color:#99CCFF;
+	margin-top:5px;
+	margin-right:50px;
+	margin-left:50px;
+	padding-right:40px;
+	padding-left:40px;
+	padding-bottom	:40px;
+	border-top-left-radius:10px;
+ 	border-top-right-radius:20px;
+
+
+}
+h3{
+	color:white;
+	font-size:30px;
+	margin-top:10px;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+.button{
+
+}
+
+.table{
+	width:1250px;
+	margin-right:50px;
+	margin-left:50px;
+}
+
+#edit{
+/* 	display:inline-block; */
+
+
+}
